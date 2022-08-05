@@ -11,11 +11,12 @@
 
                 <li class="nav-item dropdown bg-dark">
                     <a class="nav-link dropdown-toggle" style="color: red" href="/manager/airport/main" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Flight
+                        Product
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
-                        <li><a class="dropdown-item" href="/add/flight" style="color: red">Add flight</a></li>
-                        <li><a class="dropdown-item" href="/show/flight" style="color: red">Show flight</a></li>
+                        <li><a class="dropdown-item" href="/add/product" style="color: blue">Add product</a></li>
+                        <li><a class="dropdown-item" href="/show/show" style="color: blue">Show product</a></li>
+                        <li><a class="dropdown-item" href="/delete/product" style="color: red">Show product</a></li>
                     </ul>
                 </li>
 
