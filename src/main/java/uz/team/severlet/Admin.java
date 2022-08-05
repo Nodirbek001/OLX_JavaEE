@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Admin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/views/main/admin/add_product.jsp").forward(req,
+        req.getRequestDispatcher("/views/main/admin/product/add_product.jsp").forward(req,
                 resp);
     }
 }
