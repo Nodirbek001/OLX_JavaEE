@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Getter
 @Setter
-
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
