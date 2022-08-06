@@ -14,5 +14,5 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int money;
+    private double money;
 }
