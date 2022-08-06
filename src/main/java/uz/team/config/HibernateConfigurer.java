@@ -7,6 +7,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
+import uz.team.domain.User;
 
 import java.util.Objects;
 import java.util.Properties;
@@ -24,9 +25,9 @@ public class HibernateConfigurer {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");
-                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/fly");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/olx");
                 settings.put(Environment.USER, "postgres");
-                settings.put(Environment.PASS, "12345");
+                settings.put(Environment.PASS, "123");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 settings.put(Environment.FORMAT_SQL, "true");
@@ -56,10 +57,7 @@ public class HibernateConfigurer {
 //                reflections.get(SubTypes.of(TypesAnnotated.with(Entity.class)).asClass())
 //                        .forEach(sources::addAnnotatedClass);
 //
-//                sources.addAnnotatedClass(Users.class);
-//                sources.addAnnotatedClass(UserRole.class);
-//                sources.addAnnotatedClass(Airport.class);
-//                sources.addAnnotatedClass(Plane.class);
+                sources.addAnnotatedClass(User.class);
 
                 // Create Metadata
                 Metadata metadata = sources.getMetadataBuilder().build();

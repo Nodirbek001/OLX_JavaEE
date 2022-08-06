@@ -10,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Table(name = "users")
+@Table(name = "auth_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,8 +19,10 @@ public class User {
     private String fullName;
     private String username;
     private String password;
+    @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToOne
+    private Integer phoneNumber;
+
     private Card card;
 
     public enum Role {

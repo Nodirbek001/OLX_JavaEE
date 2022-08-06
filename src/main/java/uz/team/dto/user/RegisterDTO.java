@@ -14,15 +14,18 @@ public class RegisterDTO {
     private String fullName;
     private String username;
     private String password;
+    private String confirmPassword;
     private String email;
+    private Integer phoneNumber;
 
     public User toUser(){
         return User.builder()
                 .fullName(this.fullName)
+                .phoneNumber(this.phoneNumber)
+                .email(this.email)
                 .username(this.username)
                 .password(Utils.encodePassword(password))
                 .role(User.Role.USER)
-                .email(this.email)
                 .build();
     }
 }
