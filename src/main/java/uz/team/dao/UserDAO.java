@@ -39,4 +39,11 @@ public class UserDAO implements Dao<User>{
                         .setParameter("username", username)
                         .getSingleResultOrNull());
     }
+    public User findByUsername1(String username) {
+        Session session = HibernateConfigurer.getSession();
+        return
+                session.createQuery("select  t from User t where t.username = :username", User.class)
+                        .setParameter("username", username)
+                        .getSingleResultOrNull();
+    }
 }

@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
                 .password(req.getParameter("password"))
                 .confirmPassword(req.getParameter("confirmPassword"))
                 .build();
-        userService.create(registerDTO);
+        userService.create();
         resp.sendRedirect(" /auth/login");
     }
 }

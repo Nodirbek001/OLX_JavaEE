@@ -5,6 +5,7 @@ import uz.team.dao.UserDAO;
 import uz.team.domain.Uploade;
 import uz.team.domain.User;
 import uz.team.dto.prodact.ProductDTO;
+import uz.team.exceptions.BadRequestException;
 import uz.team.service.Service;
 
 import javax.servlet.ServletException;
@@ -20,19 +21,23 @@ public class ProductService extends Service<ProductDao> {
     }
 
 
-    public void create(HttpServletRequest req) throws ServletException, IOException {
+    public BadRequestException create(HttpServletRequest req) throws ServletException, IOException {
         Part file = req.getPart("file");
         ProductDTO productDTO = new ProductDTO();
         productDTO.setProductName(req.getParameter("name"));
         productDTO.setPrice(Integer.parseInt(req.getParameter("price")));
         String username = req.getParameter("username");
         UserDAO userDAO = null;
-        User byUsername = userDAO.findByUsername(username);
-        productDTO.setUser(byUsername);
+        Optional<User> byUsername = userDAO.findByUsername(username);
+        if (byUsername.isEmpty()){
+            return new BadRequestException("Username invalid");
+        }
+        productDTO.setUser(userDAO.findByUsername1(username));
         productDTO.setCategory(req.getParameter("category"));
         Uploade uploade=Uploade.builder()
                 .generatedName()
         uploade.
-        productDTO.set;
+
+        return null;
     }
 }

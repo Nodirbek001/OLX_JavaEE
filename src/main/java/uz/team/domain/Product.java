@@ -20,7 +20,7 @@ public class Product {
     @OneToOne
     private Uploade uploade;
     @OneToOne
-    private Catagory category;
+    private Category category;
     @OneToOne
     private User user;
     private boolean isdelete=false;
