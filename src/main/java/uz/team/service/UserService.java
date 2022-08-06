@@ -1,6 +1,7 @@
 package uz.team.service;
 
 import uz.team.dao.UserDAO;
+import uz.team.dto.prodact.ProductDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +14,5 @@ public class UserService extends Service<UserDAO> {
         super(dao);
     }
 
-    public void create(HttpServletRequest req) throws ServletException, IOException {
-        Part file = req.getPart("file");
 
-    }
 }

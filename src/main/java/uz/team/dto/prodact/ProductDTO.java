@@ -2,6 +2,8 @@ package uz.team.dto.prodact;
 
 import lombok.*;
 import uz.team.domain.Uploade;
+import uz.team.domain.User;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,5 +15,6 @@ public class ProductDTO {
     private int price;
     private String category;
     private Uploade uploade;
-    private String username;
+    private User user;
+    private String title;
 }
