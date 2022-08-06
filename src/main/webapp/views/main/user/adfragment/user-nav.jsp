@@ -49,7 +49,7 @@
             </ul>
             <ul class="navbar-nav">
                 <c:choose>
-                    <c:when test="${!loggedId}">
+                    <c:when test="${loggedId}">
                         <li class="nav-item">
                             <a href="/auth/login" class="nav-link" style="color: red">Login</a>
                         </li>
