@@ -3,7 +3,6 @@ package uz.team.util;
 import lombok.NonNull;
 import org.mindrot.jbcrypt.BCrypt;
 
-
 public class Utils {
     public static String COVER_EXTENSION = "jpg";
     public static final String COVER_CONTENT_TYPE = "image/" + COVER_EXTENSION;

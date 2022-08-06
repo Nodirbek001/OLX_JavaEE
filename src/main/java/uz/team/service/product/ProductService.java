@@ -1,11 +1,15 @@
 package uz.team.service.product;
 
+import uz.team.dao.CategoryDAO;
 import uz.team.dao.ProductDao;
 import uz.team.dao.UserDAO;
-import uz.team.domain.Uploade;
+import uz.team.domain.Product;
+import uz.team.domain.Uploads;
 import uz.team.domain.User;
+import uz.team.dto.UploadsDTO;
 import uz.team.dto.prodact.ProductDTO;
 import uz.team.exceptions.BadRequestException;
+import uz.team.service.CategoryService;
 import uz.team.service.Service;
 
 import javax.servlet.ServletException;
@@ -34,10 +38,11 @@ public class ProductService extends Service<ProductDao> {
         }
         productDTO.setUser(userDAO.findByUsername1(username));
         productDTO.setCategory(req.getParameter("category"));
-        Uploade uploade=Uploade.builder()
-                .generatedName()
-        uploade.
-
-        return null;
+        UploadsDTO uploadsDTO = UploadsDTO.ToDTO(file);
+        Uploads uploads = Uploads.ToDomain(uploadsDTO);
+        productDTO.setUploade(uploads);
+        productDTO.setTitle(req.getParameter("title"));
+Product produc=Product
+        return
     }
 }
