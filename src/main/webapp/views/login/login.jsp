@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <jsp:include page="../fragment/head.jsp"/>
-<body>
+<body class="bg-success p-2 text-dark bg-opacity-50">
 <div class="row">
     <div class="col-4 offset-4">
         <form method="post">

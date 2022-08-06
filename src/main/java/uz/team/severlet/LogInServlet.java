@@ -35,7 +35,7 @@ public class LogInServlet extends HttpServlet {
         User.Role userRole = login.getRole();
         switch (userRole) {
             case USER -> resp.sendRedirect("/");
-            case ADMIN -> resp.sendRedirect("/managerpage");
+            case ADMIN -> resp.sendRedirect("/views/main/admin/AdminPage.jsp");
         }
     }
 }

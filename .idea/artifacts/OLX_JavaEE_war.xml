@@ -9,6 +9,11 @@
     </properties>
     <root id="archive" name="OLX_JavaEE-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="OLX_JavaEE:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="jpa-descriptors" facet="OLX_JavaEE/jpa/JPA" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

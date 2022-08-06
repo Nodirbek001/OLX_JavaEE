@@ -34,9 +34,9 @@ public class ProductService extends Service<ProductDao> {
         }
         productDTO.setUser(userDAO.findByUsername1(username));
         productDTO.setCategory(req.getParameter("category"));
-        Uploade uploade=Uploade.builder()
-                .generatedName()
-        uploade.
+//        Uploade uploade=Uploade.builder()
+//                .generatedName()
+//        uploade.
 
         return null;
     }
