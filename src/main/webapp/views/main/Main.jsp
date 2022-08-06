@@ -12,8 +12,8 @@
     <jsp:include page="../fragment/head.jsp"/>
 </head>
 <body class="bg-success p-2 text-dark bg-opacity-50">
-<jsp:include page="../fragment/manager-nav.jsp"/>
+<jsp:include page="../main/user/user_page.jsp"/>
 <br><br><br><br>
-<h1>MAIN PAGE</h1>
+<h1>USER PAGE</h1>
 </body>
 </html>
