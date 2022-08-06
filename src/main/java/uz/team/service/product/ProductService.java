@@ -3,6 +3,7 @@ package uz.team.service.product;
 import uz.team.dao.CategoryDAO;
 import uz.team.dao.ProductDao;
 import uz.team.dao.UserDAO;
+import uz.team.domain.Category;
 import uz.team.domain.Product;
 import uz.team.domain.Uploads;
 import uz.team.domain.User;
@@ -20,12 +21,12 @@ import java.util.Optional;
 
 public class ProductService extends Service<ProductDao> {
 
-    protected ProductService(ProductDao dao) {
+    public ProductService(ProductDao dao) {
         super(dao);
     }
 
 
-    public BadRequestException create(HttpServletRequest req) throws ServletException, IOException {
+    public void create(HttpServletRequest req) throws ServletException, IOException {
         Part file = req.getPart("file");
         ProductDTO productDTO = new ProductDTO();
         productDTO.setProductName(req.getParameter("name"));
@@ -33,16 +34,19 @@ public class ProductService extends Service<ProductDao> {
         String username = req.getParameter("username");
         UserDAO userDAO = null;
         Optional<User> byUsername = userDAO.findByUsername(username);
-        if (byUsername.isEmpty()){
-            return new BadRequestException("Username invalid");
+        if (byUsername.isEmpty()) {
+            throw new RuntimeException(new BadRequestException("dw"));
         }
         productDTO.setUser(userDAO.findByUsername1(username));
-        productDTO.setCategory(req.getParameter("category"));
+        CategoryDAO CategoryDAO = null;
+        CategoryService categoryService = new CategoryService(CategoryDAO);
+        Category category = categoryService.FindByName(req.getParameter("category"));
+        productDTO.setCategory(category);
         UploadsDTO uploadsDTO = UploadsDTO.ToDTO(file);
         Uploads uploads = Uploads.ToDomain(uploadsDTO);
         productDTO.setUploade(uploads);
         productDTO.setTitle(req.getParameter("title"));
-Product produc=Product
-        return
+        Product product = Product.ToDomain(productDTO);
+        dao.create(product);
     }
 }

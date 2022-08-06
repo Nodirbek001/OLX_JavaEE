@@ -28,7 +28,12 @@ public class Product {
     public static Product ToDomain(ProductDTO productDTO) {
         return Product.builder()
                 .name(productDTO.getProductName())
-                
+                .category(productDTO.getCategory())
+                .price(productDTO.getPrice())
+                .title(productDTO.getTitle())
+                .uploade(productDTO.getUploade())
+                .user(productDTO.getUser())
+                .build();
     }
 
 }

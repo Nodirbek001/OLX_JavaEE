@@ -22,11 +22,11 @@
 
                 <li class="nav-item dropdown bg-dark">
                     <a class="nav-link dropdown-toggle" style="color: red" href="/manager/airport/main" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Users
+                        Category
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
-                        <li><a class="dropdown-item" href="#" style="color: red">Add airport</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: red">Show airports</a></li>
+                        <li><a class="dropdown-item" href="/add/category" style="color: red">Add Category</a></li>
+                        <li><a class="dropdown-item" href="/show/category" style="color: red">Show Category</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown bg-dark">

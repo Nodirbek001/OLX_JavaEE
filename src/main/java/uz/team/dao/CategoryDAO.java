@@ -10,7 +10,11 @@ public class CategoryDAO implements Dao<Category> {
 
     @Override
     public Category create(Category entity) {
-        return null;
+        Session session=HibernateConfigurer.getSession();
+        session.getTransaction().begin();
+        session.persist(entity);
+        session.getTransaction().commit();
+        return entity;
     }
 
     @Override

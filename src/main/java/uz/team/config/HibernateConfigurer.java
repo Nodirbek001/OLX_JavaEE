@@ -7,7 +7,8 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
-import uz.team.domain.User;
+import uz.team.dao.CategoryDAO;
+import uz.team.domain.*;
 
 import java.util.Objects;
 import java.util.Properties;
@@ -25,9 +26,9 @@ public class HibernateConfigurer {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");
-                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/olx");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/database11");
                 settings.put(Environment.USER, "postgres");
-                settings.put(Environment.PASS, "123");
+                settings.put(Environment.PASS, "12345");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 settings.put(Environment.FORMAT_SQL, "true");
@@ -58,6 +59,10 @@ public class HibernateConfigurer {
 //                        .forEach(sources::addAnnotatedClass);
 //
                 sources.addAnnotatedClass(User.class);
+                sources.addAnnotatedClass(Card.class);
+                sources.addAnnotatedClass(Category.class);
+                sources.addAnnotatedClass(Product.class);
+                sources.addAnnotatedClass(Uploads.class);
 
                 // Create Metadata
                 Metadata metadata = sources.getMetadataBuilder().build();

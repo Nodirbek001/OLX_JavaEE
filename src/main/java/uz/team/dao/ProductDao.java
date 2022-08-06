@@ -1,5 +1,7 @@
 package uz.team.dao;
 
+import org.hibernate.Session;
+import uz.team.config.HibernateConfigurer;
 import uz.team.domain.Product;
 
 import java.util.List;
@@ -7,7 +9,11 @@ import java.util.List;
 public class ProductDao implements Dao<Product> {
     @Override
     public Product create(Product entity) {
-        return null;
+        Session session= HibernateConfigurer.getSession();
+        session.getTransaction().begin();
+        session.persist(entity);
+        session.getTransaction().commit();
+        return entity;
     }
 
     @Override

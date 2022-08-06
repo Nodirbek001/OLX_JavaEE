@@ -14,7 +14,7 @@ import uz.team.domain.User;
 public class ProductDTO {
     private String productName;
     private int price;
-    private String category;
+    private Category category;
     private Uploads uploade;
     private User user;
     private String title;
