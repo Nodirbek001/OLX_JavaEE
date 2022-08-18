@@ -26,9 +26,9 @@ public class Product {
     private String title;
 
     public static Product ToDomain(ProductDTO productDTO) {
-//        return Product.builder()
-//                .name(productDTO.getProductName())
-                return null;
+        return Product.builder()
+                .name(productDTO.getProductName())
+                
     }
 
 }

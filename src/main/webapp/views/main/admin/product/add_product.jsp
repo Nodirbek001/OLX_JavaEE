@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nodirbek
@@ -29,28 +30,18 @@
                 <input type="number" name="price" class="form-control" id="price"/>
             </div>
             </br>
-            <%--            <br><br>--%>
-            <%--            <label for="exampleInputEmail1" class="form-label">From ... airport</label>--%>
-            <%--            <select class="form-select" name="from" aria-label="Default select example">--%>
-            <%--                <c:forEach items="${airs}" var="air">--%>
-            <%--                    <option value="${air.id}">${air.name}</option>--%>
-            <%--                </c:forEach>--%>
-            <%--            </select>--%>
-            <%--            <br><br>--%>
+
             <div class="form-group">
-                <label for="pageCount">Category</label>
-                <input type="number" name="pageCount" class="form-control" id="pageCount"/>
+                <label for="category">Category</label>
+                <select class="form-control" id="category" name="category">
+                    <c:forEach items="${categories}" var="category">--%>
+                        <option value="${category.name}">${category.name}</option>
+                    </c:forEach>
+                </select>
             </div>
             <div class="form-group">
-                <label for="genre">Genre</label>
-                <select class="form-control" id="genre">
-                    <option value="HORROR">HORROR</option>
-                    <option value="ROMANCE">ROMANCE</option>
-                    <option value="DRAMA">DRAMA</option>
-                    <option value="ROMANCE_DRAMA">ROMANCE_DRAMA</option>
-                    <option value="SUPER_NATURAL_HORROR">SUPER_NATURAL_HORROR</option>
-                    <option value="SCI_FI">SCI_FI</option>
-                </select>
+                <label for="pageCount">Title</label>
+                <input type="text" name="title" class="form-control" id="pageCount"/>
             </div>
             <div class="form-group">
                 <label for="file">Enter product picture</label>
@@ -58,6 +49,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
     </div>
 </div>
 

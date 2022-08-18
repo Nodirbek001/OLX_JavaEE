@@ -3,11 +3,8 @@ package uz.team.dao;
 import org.hibernate.Session;
 import uz.team.config.HibernateConfigurer;
 import uz.team.domain.User;
-import uz.team.dto.user.RegisterDTO;
-import uz.team.exceptions.BadRequestException;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public class UserDAO implements Dao<User>{
@@ -48,20 +45,5 @@ public class UserDAO implements Dao<User>{
                 session.createQuery("select  t from User t where t.username = :username", User.class)
                         .setParameter("username", username)
                         .getSingleResultOrNull();
-    }
-
-    public Long update(Long id, RegisterDTO dto){
-        if (Objects.isNull(id)) {
-            throw new BadRequestException("User has not logged in yet!");
-        }
-        Session session = HibernateConfigurer.getSession();
-        User user = session.createQuery("select t from User t where t.id = :id", User.class).setParameter("id", id).getSingleResultOrNull();
-        if (Objects.isNull(user)){
-            throw new BadRequestException("User not found!");
-        }
-//        session.createQuery("update User set fullName = :dto.fullname")
-
-
-        return id;
     }
 }
