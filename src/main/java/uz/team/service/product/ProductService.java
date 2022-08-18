@@ -33,7 +33,7 @@ public class ProductService extends Service<ProductDao> {
         String username = req.getParameter("username");
         UserDAO userDAO = null;
         Optional<User> byUsername = userDAO.findByUsername(username);
-        if (byUsername.isEmpty()){
+        if (byUsername.isEmpty()) {
             return new BadRequestException("Username invalid");
         }
         productDTO.setUser(userDAO.findByUsername1(username));
@@ -42,7 +42,7 @@ public class ProductService extends Service<ProductDao> {
         Uploads uploads = Uploads.ToDomain(uploadsDTO);
         productDTO.setUploade(uploads);
         productDTO.setTitle(req.getParameter("title"));
-Product produc=Product
-        return
+//        Product produc = Product
+        return null;
     }
 }

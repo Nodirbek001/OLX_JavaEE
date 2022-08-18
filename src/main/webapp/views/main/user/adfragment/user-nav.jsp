@@ -24,13 +24,24 @@
                         Category
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
-                        <li><a class="dropdown-item" href="/electronics" style="color: red">Electronics</a></li>
-                        <li><a class="dropdown-item" href="/house" style="color: red">House</a></li>
-                        <li><a class="dropdown-item" href="/for_business" style="color: red">For Business</a></li>
-                        <li><a class="dropdown-item" href="/works" style="color: red">Works</a></li>
-                        <li><a class="dropdown-item" href="/animals" style="color: red">Animals</a></li>
-                        <li><a class="dropdown-item" href="/transports" style="color: red">Transports</a></li>
-                        <li><a class="dropdown-item" href="/for_children" style="color: red">For children</a></li>
+
+
+                        <select class="form-control" id="genre" name="genre" style="background: darkslategrey">
+                            <option value="Electronics" style="color: red">Electronics</option>
+                            <option value="House" style="color: red">House</option>
+                            <option value="For Business" style="color: red">For Business</option>
+                            <option value="Animal" style="color: red">Animals</option>
+                            <option value="Transport" style="color: red">Transport</option>
+                            <option value="For Children" style="color: red">For Children</option>
+                        </select>
+
+<%--                        <li><a class="dropdown-item" href="/electronics" style="color: red">Electronics</a></li>--%>
+<%--                        <li><a class="dropdown-item" href="/house" style="color: red">House</a></li>--%>
+<%--                        <li><a class="dropdown-item" href="/for_business" style="color: red">For Business</a></li>--%>
+<%--                        <li><a class="dropdown-item" href="/works" style="color: red">Works</a></li>--%>
+<%--                        <li><a class="dropdown-item" href="/animals" style="color: red">Animals</a></li>--%>
+<%--                        <li><a class="dropdown-item" href="/transports" style="color: red">Transports</a></li>--%>
+<%--                        <li><a class="dropdown-item" href="/for_children" style="color: red">For children</a></li>--%>
                     </ul>
                 </li>
 
