@@ -7,7 +7,7 @@ import uz.team.domain.User;
 import java.util.List;
 import java.util.Optional;
 
-public class UserDAO implements Dao<User>{
+public class UserDAO implements Dao<User> {
     @Override
     public User create(User entity) {
         Session session = HibernateConfigurer.getSession();
@@ -39,11 +39,20 @@ public class UserDAO implements Dao<User>{
                         .setParameter("username", username)
                         .getSingleResultOrNull());
     }
+
     public User findByUsername1(String username) {
         Session session = HibernateConfigurer.getSession();
         return
                 session.createQuery("select  t from User t where t.username = :username", User.class)
                         .setParameter("username", username)
+                        .getSingleResultOrNull();
+    }
+
+    public User findById(int toIntExact) {
+        Session session = HibernateConfigurer.getSession();
+        return
+                session.createQuery("select  t from User t where t.id = :id", User.class)
+                        .setParameter("id", toIntExact)
                         .getSingleResultOrNull();
     }
 }
