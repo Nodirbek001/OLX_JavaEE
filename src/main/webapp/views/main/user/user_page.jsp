@@ -20,5 +20,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </div>
+
 </body>
+<jsp:include page="adfragment/js.jsp"/>
 </html>
