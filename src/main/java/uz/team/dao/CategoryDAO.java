@@ -24,7 +24,12 @@ public class CategoryDAO implements Dao<Category> {
 
     @Override
     public List<Category> findAll() {
-        return null;
+        Session session=HibernateConfigurer.getSession();
+        session.getTransaction().begin();
+        List<Category> select_t_from_category_t = session.createQuery("select T from Category T", Category.class).getResultList();
+        session.getTransaction().commit();
+
+        return select_t_from_category_t;
     }
 
     @Override

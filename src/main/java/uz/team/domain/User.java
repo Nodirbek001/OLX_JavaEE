@@ -23,7 +23,7 @@ public class User {
     private Role role;
     private Integer phoneNumber;
 
-//    private Card card;
+//    private Card;
 
     public enum Role {
         ADMIN, USER;

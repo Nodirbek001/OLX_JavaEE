@@ -15,5 +15,6 @@
 <jsp:include page="adfragment/admin-nav.jsp"/>
 <br><br><br><br>
 <h1>MAIN PAGE</h1>
+<h1>MAIN PAGE</h1>
 </body>
 </html>
