@@ -45,9 +45,11 @@
             </div>
             <div class="form-group">
                 <label for="file">Enter product picture</label>
-                <input type="file" name="file" class="form-control" id="file"/>
+                <input type="file" name="files" class="form-control" id="file"/>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
         </form>
 
     </div>

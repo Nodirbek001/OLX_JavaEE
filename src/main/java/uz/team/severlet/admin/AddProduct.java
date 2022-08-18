@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/add/product")
-@MultipartConfig(fileSizeThreshold   = 1024 * 1024 * 1,  // 1 MB
-        maxFileSize         = 1024 * 1024 * 10, // 10 MB
-        maxRequestSize      = 1024 * 1024 * 15, // 15 MB
-        location            = "/home/nodirbek/downloads/")
+@MultipartConfig
 public class AddProduct extends HttpServlet {
     private final ProductService productService = ApplicationContext.getBean(ProductService.class);
     private final CategoryService categoryService = ApplicationContext.getBean(CategoryService.class);
@@ -24,8 +21,7 @@ public class AddProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("categories", categoryService.getALl());
-        req.getRequestDispatcher("/views/main/admin/product/add_product.jsp").forward(req,
-                resp);
+        req.getRequestDispatcher("/views/main/admin/product/add_product.jsp").forward(req, resp);
     }
 
     @Override
