@@ -42,11 +42,10 @@ public class ProductService extends Service<ProductDao> {
         Category category = categoryService.FindByName(req.getParameter("category"));
         productDTO.setCategory(category);
 
-        Part file = req.getPart("files");
+        Part file = req.getPart("file");
         UploadsDTO uploadsDTO = UploadsDTO.ToDTO(file);
         Uploads uploads = Uploads.ToDomain(uploadsDTO);
         productDTO.setUploade(uploads);
-
 
         productDTO.setTitle(req.getParameter("title"));
         Product product = Product.ToDomain(productDTO);

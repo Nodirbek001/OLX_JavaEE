@@ -18,36 +18,46 @@
 <h1>ADD Product</h1>
 <div class="row">
     <div class="col-6 offset-3">
-        <form method="post">
-            <%--@declare id="exampleinputemail1"--%>
-            <div class="form-group">
-                <label for="name">Product Name</label>
-                <input type="text" name="name" class="form-control" id="name"/>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="price">Product price</label>
-                <input type="number" name="price" class="form-control" id="price"/>
-            </div>
-            </br>
+        <form method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
 
-            <div class="form-group">
-                <label for="category">Category</label>
-                <select class="form-control" id="category" name="category">
-                    <c:forEach items="${categories}" var="category">--%>
-                        <option value="${category.name}">${category.name}</option>
-                    </c:forEach>
-                </select>
+                            <div class="form-group">
+                                <label for="name">Product Name</label>
+                                <input type="text" name="name" class="form-control" id="name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Product price</label>
+                                <input type="number" name="price" class="form-control" id="price"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pageCount">Title</label>
+                                <input type="text" name="title" class="form-control" id="pageCount"/>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category" name="category">
+                                    <c:forEach items="${categories}" var="category">--%>
+                                        <option value="${category.name}">${category.name}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="file">Upload</label>
+                                <input type="file" name="file" class="form-control" id="file"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="form-group">
-                <label for="pageCount">Title</label>
-                <input type="text" name="title" class="form-control" id="pageCount"/>
-            </div>
-            <div class="form-group">
-                <label for="file">Enter product picture</label>
-                <input type="file" name="files" class="form-control" id="file"/>
-            </div>
-                <div class="modal-footer">
+            <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
