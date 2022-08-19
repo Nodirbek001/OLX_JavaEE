@@ -10,6 +10,7 @@ import uz.team.dto.prodact.ProductDTO;
 @Getter
 @Setter
 @Builder
+@ToString
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

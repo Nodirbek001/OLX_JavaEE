@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 public class ProductService extends Service<ProductDao> {
@@ -42,13 +43,17 @@ public class ProductService extends Service<ProductDao> {
         Category category = categoryService.FindByName(req.getParameter("category"));
         productDTO.setCategory(category);
 
-        Part file = req.getPart("file");
-        UploadsDTO uploadsDTO = UploadsDTO.ToDTO(file);
-        Uploads uploads = Uploads.ToDomain(uploadsDTO);
-        productDTO.setUploade(uploads);
-
+//        Part file = req.getPart("file");
+//        UploadsDTO uploadsDTO = UploadsDTO.ToDTO(file);
+//        Uploads uploads = Uploads.ToDomain(uploadsDTO);
+//        productDTO.setUploade(uploads);
         productDTO.setTitle(req.getParameter("title"));
         Product product = Product.ToDomain(productDTO);
         dao.create(product);
+    }
+
+
+    public List<Product> getAll(){
+        return dao.findAll();
     }
 }

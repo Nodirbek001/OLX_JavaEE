@@ -9,7 +9,7 @@ import java.util.List;
 public class ProductDao implements Dao<Product> {
     @Override
     public Product create(Product entity) {
-        Session session= HibernateConfigurer.getSession();
+        Session session = HibernateConfigurer.getSession();
         session.getTransaction().begin();
         session.persist(entity);
         session.getTransaction().commit();
@@ -23,7 +23,8 @@ public class ProductDao implements Dao<Product> {
 
     @Override
     public List<Product> findAll() {
-        return null;
+        Session session = HibernateConfigurer.getSession();
+        return session.createQuery("select t from Product t", Product.class).getResultList();
     }
 
     @Override

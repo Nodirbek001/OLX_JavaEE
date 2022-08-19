@@ -15,7 +15,7 @@
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
                         <li><a class="dropdown-item" href="/add/product" style="color: blue">Add product</a></li>
-                        <li><a class="dropdown-item" href="/show/show" style="color: blue">Show product</a></li>
+                        <li><a class="dropdown-item" href="/show/product" style="color: blue">Show product</a></li>
                         <li><a class="dropdown-item" href="/delete/product" style="color: red">Show product</a></li>
                     </ul>
                 </li>
