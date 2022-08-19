@@ -12,6 +12,8 @@ public class LogOutServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().removeAttribute("userId");
+        req.getSession().removeAttribute("categories");
+        req.getSession().removeAttribute("allProduct");
         resp.sendRedirect("/");
     }
 }

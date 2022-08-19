@@ -15,8 +15,7 @@
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
                         <li><a class="dropdown-item" href="/add/product" style="color: blue">Add product</a></li>
-                        <li><a class="dropdown-item" href="/show/product" style="color: blue">Show product</a></li>
-                        <li><a class="dropdown-item" href="/delete/product" style="color: red">Show product</a></li>
+                        <li><a class="dropdown-item" href="/show" style="color: blue">Show product</a></li>
                     </ul>
                 </li>
 
@@ -41,23 +40,23 @@
             </ul>
             <ul class="navbar-nav">
                 <c:choose>
-                    <c:when test="${!isEnter}">
+                    <c:when test="${loggedId}">
                         <li class="nav-item">
-                            <a href="/login/sign-in" class="nav-link" style="color: red">Sign in</a>
+                            <a href="/auth/login" class="nav-link" style="color: red">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/login/sign-up" class="nav-link" style="color: red">Sign up</a>
+                            <a href="/auth/register" class="nav-link" style="color: red">Register</a>
                         </li>
                     </c:when>
                     <c:otherwise>
                         <li class="nav-item">
-                            <a href="/login/logout" class="nav-link" style="color: red">Logout</a>
+                            <a href="/auth/logout" class="nav-link" style="color: red">Logout</a>
                         </li>
                     </c:otherwise>
                 </c:choose>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
