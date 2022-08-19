@@ -17,6 +17,28 @@
 <body>
 <jsp:include page="../adfragment/admin-nav.jsp"/>
 <div class="row">
+    <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" name="name" class="form-control" id="name"/>
+    </div>
+    <div class="form-group">
+        <label for="pricemax">Product price max</label>
+        <input type="number" name="pricemax" class="form-control" id="pricemax"/>
+    </div>
+    <div class="form-group">
+        <label for="procemin">Product price min</label>
+        <input type="number" name="procemin" class="form-control" id="procemin"/>
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="category">
+            <c:forEach items="${categories}" var="category">--%>
+                <option value="${category.name}">${category.name}</option>
+            </c:forEach>
+        </select>
+    </div>
+</div>
+<div class="row">
     <c:forEach items="${allProduct}" var="product">
         <div class="col-2">
             <div class="card mt-5">
