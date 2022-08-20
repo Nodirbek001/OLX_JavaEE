@@ -12,34 +12,54 @@
 <html>
 <head>
     <title>Title</title>
-  <jsp:include page="../adfragment/head.jsp"/>
+    <jsp:include page="../adfragment/head.jsp"/>
 </head>
 <body>
 <jsp:include page="../adfragment/admin-nav.jsp"/>
+
+<h1>Filter</h1>
 <div class="row">
-    <div class="form-group">
-        <label for="name">Product Name</label>
-        <input type="text" name="name" class="form-control" id="name"/>
-    </div>
-    <div class="form-group">
-        <label for="pricemax">Product price max</label>
-        <input type="number" name="pricemax" class="form-control" id="pricemax"/>
-    </div>
-    <div class="form-group">
-        <label for="procemin">Product price min</label>
-        <input type="number" name="procemin" class="form-control" id="procemin"/>
-    </div>
-    <div class="form-group">
-        <label for="category">Category</label>
-        <select class="form-control" id="category" name="category">
-            <c:forEach items="${categories}" var="category">--%>
-                <option value="${category.name}">${category.name}</option>
-            </c:forEach>
-        </select>
+    <div class="col-6 offset-3">
+        <form method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="name">Product Name</label>
+                                <input type="text" name="name" class="form-control" id="name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Product price max</label>
+                                <input type="number" name="pricemax" class="form-control" id="price"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pricemin">Product price min</label>
+                                <input type="number" name="pricemin" class="form-control" id="pricemin"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category" name="category">
+                                    <c:forEach items="${categories}" var="category">--%>
+                                        <option value="${category.name}">${category.name}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+
     </div>
 </div>
+
 <div class="row">
-    <c:forEach items="${allProduct}" var="product">
+    <c:forEach items="${all}" var="product">
         <div class="col-2">
             <div class="card mt-5">
                 <img src="images/shaytanat.png" class="card-img-top" alt="Book4" width="100">
