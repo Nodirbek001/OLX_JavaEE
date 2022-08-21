@@ -1,5 +1,7 @@
 package uz.team.dao;
 
+import uz.team.dto.user.RegisterDTO;
+
 import java.util.List;
 
 public interface Dao<T> {
@@ -10,4 +12,5 @@ public interface Dao<T> {
     List<T> findAll();
 
     T findOne(Long id);
+
 }

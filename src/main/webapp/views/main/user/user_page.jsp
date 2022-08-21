@@ -22,5 +22,4 @@
 </div>
 
 </body>
-<jsp:include page="adfragment/js.jsp"/>
 </html>

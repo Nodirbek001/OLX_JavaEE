@@ -1,4 +1,4 @@
-package uz.team.severlet;
+package uz.team.severlet.user;
 
 
 import javax.servlet.RequestDispatcher;

@@ -17,7 +17,7 @@
         <input type="text" class="form-control" id="fullName" name="fullName" placeholder="F.I.O" >
       </div>
       <div class="form-group">
-        <label for="phoneNumber">F.I.O</label>
+        <label for="phoneNumber">Phone Number</label>
         <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="+9989********" >
       </div>
       <div class="form-group">
