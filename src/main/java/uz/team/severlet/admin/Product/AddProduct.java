@@ -22,10 +22,12 @@ public class AddProduct extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("categories", categoryService.getALl());
         req.getRequestDispatcher("/views/main/admin/product/add_product.jsp").forward(req, resp);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
         productService.create(req);
         resp.sendRedirect("/admin/page");
 
