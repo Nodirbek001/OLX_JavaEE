@@ -10,6 +10,7 @@ import uz.team.util.Utils;
 
 import javax.servlet.http.HttpServlet;
 import java.util.Objects;
+import java.util.Optional;
 
 public class UserService extends Service<UserDAO >{
     public UserService(UserDAO dao) {
@@ -43,4 +44,30 @@ public class UserService extends Service<UserDAO >{
         });
         return users;
     }
+
+    public void editUser(Long id,RegisterDTO dto){
+
+//        Optional<User> byUsername = dao.findByUsername(dto.getUsername());
+        User byUsername = dao.findById(Math.toIntExact(id));
+
+        if (!Objects.isNull(dto.getFullName())){
+            byUsername.setFullName(dto.getFullName());
+        }
+        if (!Objects.isNull(dto.getPhoneNumber())){
+            byUsername.setPhoneNumber(dto.getPhoneNumber());
+        }
+        if (!Objects.isNull(dto.getEmail())){
+            byUsername.setEmail(dto.getEmail());
+        }
+        if (!Objects.isNull(dto.getUsername())){
+            byUsername.setUsername(dto.getUsername());
+        }
+        if (!Objects.isNull(dto.getPassword())){
+            byUsername.setPassword(dto.getPassword());
+        }
+
+        dao.update(id,byUsername);
+    }
+
+
 }

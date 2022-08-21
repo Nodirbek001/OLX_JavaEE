@@ -26,13 +26,12 @@
                     <ul class="dropdown-menu" style="background: darkgray">
 
 
-                        <select class="form-control" id="genre" name="genre" style="background: darkslategrey">
-                            <option value="Electronics" style="color: red">Electronics</option>
-                            <option value="House" style="color: red">House</option>
-                            <option value="For Business" style="color: red">For Business</option>
-                            <option value="Animal" style="color: red">Animals</option>
-                            <option value="Transport" style="color: red">Transport</option>
-                            <option value="For Children" style="color: red">For Children</option>
+                        <select class="form-control" id="category" name="category" style="background: darkslategrey">
+                            <c:forEach items="${categories}" var="category">
+                                <div class="col-2">
+                                    <p class="card-text">Category ${category.id}: ${category.name}</p>
+                                </div>
+                            </c:forEach>
                         </select>
 
 <%--                        <li><a class="dropdown-item" href="/electronics" style="color: red">Electronics</a></li>--%>
@@ -46,17 +45,29 @@
                 </li>
 
 
+
                 <li class="nav-item dropdown bg-dark">
-                    <a class="nav-link dropdown-toggle" style="color: red" href="my_profile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" style="color: red" href="/my_profile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         My Profile
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
-                        <li><a class="dropdown-item" href="/edit/profile" style="color: red">Edit profile</a></li>
-                        <li><a class="dropdown-item" href="/show/profile" style="color: red">Show profile</a></li>
-                        <li><a class="dropdown-item" href="/basket" style="color: red">Basket</a></li>
-                        <li><a class="dropdown-item" href="/shopping_history" style="color: red">Shopping history</a></li>
+                        <li><a class="dropdown-item" href="/show/profile" style="color: red">My profile</a></li>
+<%--                        <li><a class="dropdown-item" href="/edit/profile" style="color: red">Edit profile</a></li>--%>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown bg-dark">
+                    <a class="nav-link dropdown-toggle" style="color: red" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Basket
+                    </a>
+                    <ul class="dropdown-menu" style="background: darkgray">
+                        <li><a class="dropdown-item" href="basket/mybasket" style="color: red">My basket</a></li>
+                        <li><a class="dropdown-item" href="basket/history" style="color: red">Shopping history</a></li>
+                    </ul>
+                </li>
+
+
             </ul>
             <ul class="navbar-nav">
                 <c:choose>

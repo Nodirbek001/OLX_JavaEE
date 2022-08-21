@@ -1,6 +1,7 @@
 package uz.team.dao;
 
 import uz.team.domain.Uploads;
+import uz.team.dto.user.RegisterDTO;
 
 import java.util.List;
 
@@ -24,4 +25,6 @@ public class UploadsDAO implements Dao<Uploads> {
     public Uploads findOne(Long id) {
         return null;
     }
+
+
 }

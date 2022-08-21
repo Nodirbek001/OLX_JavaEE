@@ -3,6 +3,7 @@ package uz.team.dao;
 import org.hibernate.Session;
 import uz.team.config.HibernateConfigurer;
 import uz.team.domain.Product;
+import uz.team.dto.user.RegisterDTO;
 
 import java.util.List;
 
@@ -31,4 +32,6 @@ public class ProductDao implements Dao<Product> {
     public Product findOne(Long id) {
         return null;
     }
+
+
 }

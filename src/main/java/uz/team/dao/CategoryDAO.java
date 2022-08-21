@@ -3,6 +3,7 @@ package uz.team.dao;
 import org.hibernate.Session;
 import uz.team.config.HibernateConfigurer;
 import uz.team.domain.Category;
+import uz.team.dto.user.RegisterDTO;
 
 import java.util.List;
 
@@ -36,6 +37,9 @@ public class CategoryDAO implements Dao<Category> {
     public Category findOne(Long id) {
         return null;
     }
+
+
+
     public Category findByName(String categoryName){
         Session session= HibernateConfigurer.getSession();
         session.getTransaction().begin();

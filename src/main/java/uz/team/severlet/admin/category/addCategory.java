@@ -14,7 +14,7 @@ public class addCategory extends HttpServlet {
     public static final CategoryService category= ApplicationContext.getBean(CategoryService.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/views/main/admin/product/Add_category.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/main/admin/category/Add_category.jsp").forward(req, resp);
     }
 
     @Override
