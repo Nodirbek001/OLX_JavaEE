@@ -1,13 +1,13 @@
 package uz.team.service.product;
 
+import org.hibernate.Session;
+import uz.team.config.HibernateConfigurer;
 import uz.team.dao.CategoryDAO;
 import uz.team.dao.ProductDao;
 import uz.team.dao.UserDAO;
 import uz.team.domain.Category;
 import uz.team.domain.Product;
-import uz.team.domain.Uploads;
 import uz.team.domain.User;
-import uz.team.dto.UploadsDTO;
 import uz.team.dto.prodact.ProductDTO;
 import uz.team.exceptions.BadRequestException;
 import uz.team.service.CategoryService;
@@ -15,10 +15,10 @@ import uz.team.service.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.Part;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class ProductService extends Service<ProductDao> {
 
@@ -53,7 +53,21 @@ public class ProductService extends Service<ProductDao> {
     }
 
 
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         return dao.findAll();
+    }
+
+    public List<Product> filter(String name, String pricemin, String pricemax, String category) {
+        List<Product> all = getAll();
+        System.out.println(name);
+        System.out.println(pricemax);
+        System.out.println(pricemin);
+        if (!name.isBlank()) {
+            all.stream().filter(product -> product.getName().equals(name));
+        }
+        if (Integer.parseInt(pricemax)>0 && Integer.parseInt(pricemin)>0 && Integer.parseInt(pricemax)>Integer.parseInt(pricemin))
+            all.stream().filter(product -> product.getPrice()>Integer.parseInt(pricemin) && product.getPrice()<Integer.parseInt(pricemax));
+        return all;
+
     }
 }
