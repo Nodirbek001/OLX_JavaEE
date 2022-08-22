@@ -62,8 +62,8 @@
                         Basket
                     </a>
                     <ul class="dropdown-menu" style="background: darkgray">
-                        <li><a class="dropdown-item" href="basket/mybasket" style="color: red">My basket</a></li>
-                        <li><a class="dropdown-item" href="basket/history" style="color: red">Shopping history</a></li>
+                        <li><a class="dropdown-item" href="/basket/mybasket" style="color: red">My basket</a></li>
+                        <li><a class="dropdown-item" href="/basket/history" style="color: red">Shopping history</a></li>
                     </ul>
                 </li>
 

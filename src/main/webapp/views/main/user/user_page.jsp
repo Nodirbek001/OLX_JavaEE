@@ -20,6 +20,25 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </div>
+<div class="row">
+
+
+    <c:forEach items="${product}" var="product">
+        <div class="col-2">
+            <div class="card mt-5">
+                <img src="/home/baxtiyor/Pictures/1.png" class="card-img-top" alt="${product.name}" width="100">
+
+                <div class="card-body">
+                    <p class="card-text">Product_name : "${product.name}"</p>
+                    <p class="card-text">Category : ${product.category.name}</p>
+                    <p class="card-text">Title : ${product.title}</p>
+                    <p class="card-text">Price : ${product.price}</p>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-info offset-1" >Add Basket</button>
+    </c:forEach>
+</div>
 
 </body>
 </html>
