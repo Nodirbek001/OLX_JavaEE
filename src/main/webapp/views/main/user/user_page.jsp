@@ -23,7 +23,7 @@
 <div class="row">
 
 
-    <c:forEach items="${Product}" var="product">
+    <c:forEach items="${product}" var="product">
         <div class="col-2">
             <div class="card mt-5">
                 <img src="/home/baxtiyor/Pictures/1.png" class="card-img-top" alt="${product.name}" width="100">

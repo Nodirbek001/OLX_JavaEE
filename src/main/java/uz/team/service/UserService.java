@@ -63,7 +63,7 @@ public class UserService extends Service<UserDAO >{
             byUsername.setUsername(dto.getUsername());
         }
         if (!Objects.isNull(dto.getPassword())){
-            byUsername.setPassword(dto.getPassword());
+            byUsername.setPassword(Utils.encodePassword(dto.getPassword()));
         }
 
         dao.update(id,byUsername);
