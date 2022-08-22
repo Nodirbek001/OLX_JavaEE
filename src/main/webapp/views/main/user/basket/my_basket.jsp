@@ -22,9 +22,7 @@
 
                 <div class="card-body">
                     <p class="card-text">Product_name : "${basket.name}"</p>
-                    <p class="card-text">Category : ${basket.category.name}</p>
-                    <p class="card-text">Title : ${basket.title}</p>
-                    <p class="card-text">Price : ${basket.price}</p>
+                    <p class="card-text">Category : ${basket.price}</p>
                 </div>
             </div>
         </div>
